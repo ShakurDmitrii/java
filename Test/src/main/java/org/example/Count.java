@@ -1,11 +1,13 @@
 package org.example;
 
 import java.util.logging.Level;
-import java.util.logging.Logger;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class Count {
 
-    private static Logger log = Logger.getLogger(Count.class.getName());
+
     public  int sum(int a, int b){
         int c = a + b;
         return c;
@@ -17,13 +19,9 @@ public class Count {
         return a - b;
     }
     public  int div(int a, int b){
+        Logger log = LogManager.getLogger(Count.class);
         if(b == 0){
-            try {
-                throw new Exception("на 0 делить нельзя");
-            } catch (Exception ex) {
-                log.log(Level.SEVERE, "Exception: ", ex);
-                throw new RuntimeException(ex);
-            }
+          log.error("div by zero");
         }
         int c = a /b;
         return c;

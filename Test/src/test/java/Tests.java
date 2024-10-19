@@ -8,8 +8,6 @@ import org.mockito.MockitoAnnotations;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 
-
-
 public class Tests {
     private int a = 2;
     private int b = 2;
